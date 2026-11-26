@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EDUVERSE — Учись. Развивайся. Соревнуйся</title>
+<meta name="description" content="Образовательная платформа для школьников Кыргызстана: уроки, соревнования и программирование.">
+<meta name="theme-color" content="#0F1A27">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/style.css">
+<script>try{var t=localStorage.getItem('eduverse-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme='light'}</script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Перейти к содержимому</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="logo" href="#" aria-label="EDUVERSE">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M9 9h14v3.2H12.4v3.1H21v3.1h-8.6v3.4H23V23H9z" fill="var(--on-accent)"/></svg>
+      <span>EDUVERSE</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#directions" data-i18n="nav.directions">Направления</a>
+      <a href="#battle" data-i18n="nav.battle">Battle</a>
+      <a href="#code" data-i18n="nav.code">Code</a>
+      <a href="learn.html" data-i18n="nav.learn">Обучение</a>
+      <a href="cabinet.html" data-i18n="nav.cabinet">Кабинет</a>
+    </nav>
+    <div class="tools">
+      <label class="sr" for="lang" data-i18n="lang.label">Язык</label>
+      <select id="lang" class="select"><option value="ru">Русский</option><option value="ky">Кыргызча</option></select>
+      <button id="theme" class="icon-btn" type="button" aria-label="Сменить тему">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button id="menu" class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Меню">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap">
+    <div class="hero__text">
+      <h1 data-i18n="hero.title">Учись. Развивайся. Соревнуйся.</h1>
+      <p class="lead" data-i18n="hero.lead">Платформа для школьников 3–11 классов: уроки по предметам, интеллектуальные дуэли и курсы по программированию в одном месте.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="register.html" data-i18n="hero.start">Начать обучение</a>
+        <a class="btn" href="#why" data-i18n="hero.more">Смотреть возможности</a>
+      </div>
+      <p class="note" data-i18n="hero.note">Сейчас это демонстрационная версия на тестовых данных.</p>
+    </div>
+
+    <div class="duel" id="duel" aria-live="polite">
+      <div class="duel__bar">
+        <span data-i18n="duel.title">Пример дуэли</span>
+        <span class="timer" id="timer" role="timer">15</span>
+      </div>
+      <div class="duel__track"><div class="duel__fill" id="fill"></div></div>
+      <p class="duel__q" id="q"></p>
+      <div class="duel__opts" id="opts"></div>
+      <p class="duel__res" id="res"></p>
+      <button class="btn btn--small" id="next" type="button" hidden data-i18n="duel.next">Следующий вопрос</button>
+    </div>
+  </section>
+
+  <section id="directions" class="sec wrap">
+    <h2 data-i18n="dir.title">Пять направлений</h2>
+    <p class="sec__lead" data-i18n="dir.lead">Направления дополняют обязательную школьную программу и не заменяют её. Ученик выбирает одно при регистрации и может изменить позже.</p>
+    <div class="dirs" id="dirs"></div>
+  </section>
+
+  <section id="battle" class="sec sec--tint">
+    <div class="wrap split">
+      <div>
+        <h2 data-i18n="battle.title">EDUVERSE Battle</h2>
+        <p data-i18n="battle.text">Дуэли 1 на 1, командные игры и турниры между классами. Вопросы, таймер и результат — в одном интерфейсе.</p>
+        <ul class="list">
+          <li data-i18n="battle.l1">Комната по коду: создайте игру и позовите одноклассников.</li>
+          <li data-i18n="battle.l2">Баллы рейтинга начисляет сервер, а не браузер.</li>
+          <li data-i18n="battle.l3">В демо-режиме вопросы берутся из локального набора.</li>
+        </ul>
+      </div>
+      <div class="ph" role="img" aria-label="Место для фотографии: школьники за соревнованием"><span data-i18n="ph.team">Фото: командная работа</span></div>
+    </div>
+  </section>
+
+  <section id="code" class="sec wrap split split--rev">
+    <div class="code" aria-label="Пример кода">
+<pre><code>&lt;button id="go"&gt;Привет&lt;/button&gt;
+&lt;script&gt;
+  go.onclick = () =&gt;
+    alert('Я пишу код!');
+&lt;/script&gt;</code></pre>
+    </div>
+    <div>
+      <h2 data-i18n="code.title">EDUVERSE Code</h2>
+      <p data-i18n="code.text">Три курса: HTML, CSS и JavaScript. К каждому уроку — пример, задание и тест, а рядом редактор с предпросмотром.</p>
+      <p class="note" data-i18n="code.note">Лаборатория программирования появится на следующем этапе разработки.</p>
+    </div>
+  </section>
+
+  <section id="why" class="sec wrap">
+    <h2 data-i18n="why.title">Что внутри</h2>
+    <div class="feats">
+      <article><h3 data-i18n="why.1t">Уроки и тесты</h3><p data-i18n="why.1p">Темы, теория, примеры и задания по предметам с фильтром по классу.</p></article>
+      <article><h3 data-i18n="why.2t">Прогресс</h3><p data-i18n="why.2p">Баллы XP, уровни и история результатов в личном кабинете.</p></article>
+      <article><h3 data-i18n="why.3t">Приватность</h3><p data-i18n="why.3p">Ученик сам решает, показывать ли своё имя в открытом рейтинге.</p></article>
+      <article><h3 data-i18n="why.4t">На телефоне</h3><p data-i18n="why.4p">Адаптивный сайт, который можно установить как приложение (PWA).</p></article>
+    </div>
+  </section>
+
+  <section id="join" class="sec sec--tint">
+    <div class="wrap join">
+      <h2 data-i18n="join.title"></h2>
+      <p data-i18n="join.text"></p>
+      <a class="btn btn--primary" href="register.html" data-i18n="join.btn">Создать профиль</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <strong>EDUVERSE</strong>
+    <span data-i18n="foot.text">Учебный проект для IT-конкурса. Материалы в демо-версии не являются официальной программой.</span>
+    <span data-i18n="foot.contact">Контакты: будут добавлены автором проекта</span>
+  </div>
+</footer>
+
+<script src="data/directions.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/i18n-app.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/duel.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

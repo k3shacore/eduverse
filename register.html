@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Регистрация — EDUVERSE</title>
+<meta name="theme-color" content="#0F1A27">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/app.css">
+<script>try{var t=localStorage.getItem('eduverse-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme='light'}</script>
+</head>
+<body>
+<header id="site-header"></header>
+<main class="wrap page" id="main">
+<div class="tabs" role="tablist"><button class="tab on" id="t-reg" type="button" role="tab" data-i18n="tab.reg"></button><button class="tab" id="t-login" type="button" role="tab" data-i18n="tab.login"></button></div>
+<form id="form" class="form" novalidate>
+ <div class="field" data-f="name"><label for="name" data-i18n="reg.name"></label><input id="name" autocomplete="nickname"><p class="err" role="alert"></p></div>
+ <div class="field" data-f="email"><label for="email" data-i18n="reg.email"></label><input id="email" type="email" autocomplete="email"><p class="err" role="alert"></p></div>
+ <div class="field" data-f="pass"><label for="pass" data-i18n="reg.pass"></label><input id="pass" type="password" autocomplete="new-password"><p class="err" role="alert"></p></div>
+ <div id="regonly">
+  <div class="field" data-f="grade"><label for="grade" data-i18n="reg.grade"></label><select id="grade" class="select"></select><p class="err" role="alert"></p></div>
+  <div class="field" data-f="dir"><label for="dir" data-i18n="reg.dir"></label><select id="dir" class="select"></select><p class="err" role="alert"></p></div>
+  <div class="field"><label for="ulang" data-i18n="reg.lang"></label><select id="ulang" class="select"><option value="ru">Русский</option><option value="ky">Кыргызча</option></select></div>
+  <label class="check"><input type="checkbox" id="pub"><span data-i18n="reg.public"></span></label>
+ </div>
+ <button class="btn btn--primary" id="submit" type="submit"></button>
+ <p class="note" data-i18n="reg.demo"></p>
+</form>
+</main>
+<script src="data/directions.js"></script>
+<script src="data/subjects.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/i18n-app.js"></script>
+<script src="js/store.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

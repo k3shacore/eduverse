@@ -1,0 +1,10 @@
+:root{
+  --bg:#F6F8FB;--surface:#FFFFFF;--text:#14202E;--muted:#556577;--line:#DCE2E9;
+  --accent:#1D4F91;--on-accent:#FFFFFF;--sun:#E0A100;--ok:#1E7B4F;--bad:#B3322B;--tint:#EAF0F7;
+  color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --bg:#0F1A27;--surface:#162434;--text:#E8EDF3;--muted:#9AA9BA;--line:#27394D;
+  --accent:#7DAEE8;--on-accent:#0F1A27;--sun:#E8B931;--ok:#5CC08F;--bad:#EF8A82;--tint:#13212F;
+  color-scheme:dark;
+}
